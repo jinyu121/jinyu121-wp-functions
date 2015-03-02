@@ -9,7 +9,7 @@ Author URI: mailto:jinyu121@126.com
 $host = $_SERVER['HTTP_HOST'];
 $is_localhost = strstr($host, '192.168') || strstr($host, '127.0.0') || stristr($host, 'localhost') ? true : false; // 判斷是否在本地
 
-// define('INC', WP_PLUGIN_DIR.'/jinyu121-wp-functions/functions-enabled');
+// define('INC', dirname( __FILE__ ) .'/functions-enabled');
 // IncludeAll( INC );
 // function IncludeAll($dir){
 //     $dir = realpath($dir);
@@ -26,6 +26,6 @@ $is_localhost = strstr($host, '192.168') || strstr($host, '127.0.0') || stristr(
 //     }
 // }
 
-foreach( glob( WP_PLUGIN_DIR.'/jinyu121-wp-functions/functions-enabled/*.php' ) as $filename ){
+foreach( glob( dirname( __FILE__ ) .'/functions-enabled/*.php' ) as $filename ){
     include_once( $filename );
 }
