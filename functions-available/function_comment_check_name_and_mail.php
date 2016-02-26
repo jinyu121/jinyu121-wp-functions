@@ -10,7 +10,7 @@
 // |    评论检查
 // +----------------------------------------------------------------------+
 
-function CheckEmailAndName() {
+function function_comment_check_name_and_mail() {
     global $wpdb;
     $comment_author = (isset($_POST['author'])) ? trim(strip_tags($_POST['author'])) : null;
     $comment_author_email = (isset($_POST['email'])) ? trim($_POST['email']) : null;
@@ -27,4 +27,4 @@ function CheckEmailAndName() {
         fail($errorMessage);
     }
 }
-add_action('pre_comment_on_post', 'CheckEmailAndName');
+add_action('pre_comment_on_post', 'function_comment_check_name_and_mail');

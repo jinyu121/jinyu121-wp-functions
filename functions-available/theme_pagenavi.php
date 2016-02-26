@@ -10,7 +10,7 @@
 // |    Wordpress 分页函数
 // +----------------------------------------------------------------------+
 
-function wp_pagenavi($range = 5){
+function theme_pagenavi($range = 5){
     global $paged, $wp_query;
     if ( !$max_page ) {
         $max_page = $wp_query->max_num_pages;

@@ -11,7 +11,7 @@
 // +----------------------------------------------------------------------+
 
 
-function willin_kan_anti_spam(){
+function function_anti_spam(){
     class anti_spam {
         // 增加：使用一个peivate属性，方便修改
         private $w='Spam_G0_D1e';
@@ -50,4 +50,4 @@ function willin_kan_anti_spam(){
     }
     $anti_spam = new anti_spam();
 }
-add_action('init', 'willin_kan_anti_spam');
+add_action('init', 'function_anti_spam');

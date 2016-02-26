@@ -11,7 +11,7 @@
 // +----------------------------------------------------------------------+
 
 /* Mini Gavatar Cache by Willin Kan. */
-function my_avatar( $email, $size = '42', $default = '', $alt = false ) {
+function theme_mini_avatar( $email, $size = '42', $default = '', $alt = false ) {
     $alt = (false === $alt) ? '' : esc_attr( $alt );
     $f = md5( strtolower( $email ) );
     $a = get_bloginfo('wpurl'). '/avatar/'. $f. '.jpg';

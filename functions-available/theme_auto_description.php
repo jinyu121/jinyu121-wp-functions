@@ -11,7 +11,7 @@
 // +----------------------------------------------------------------------+
 
 /* Auto-description v1.3 by Willin Kan. */
-function head_meta_desc() {
+function theme_auto_description() {
   global $s, $post;
   $description = '';
   $blog_name = get_bloginfo('name');
@@ -33,7 +33,7 @@ function head_meta_desc() {
   $description = mb_substr( $description, 0, 97, 'utf-8' ) . '..';
   echo "<meta name=\"description\" content=\"$description\" />\n";
 }
-add_action('wp_head', 'head_meta_desc');
+add_action('wp_head', 'theme_auto_description');
 
 /*
     用法:

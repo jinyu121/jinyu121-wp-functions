@@ -10,7 +10,7 @@
 // |    WordPress 修改时间的显示格式为几天前
 // +----------------------------------------------------------------------+
 
-function time_diff($time_type) {
+function theme_time_diff($time_type) {
     switch ($time_type) {
         case 'comment':
             $time_diff = current_time('timestamp') - get_comment_time('U');

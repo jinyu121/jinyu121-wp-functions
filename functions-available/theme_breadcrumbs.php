@@ -10,7 +10,7 @@
 // |    面包屑导航
 // +----------------------------------------------------------------------+
 
-function wp_breadcrumbs(){
+function theme_breadcrumbs(){
     $sep=" » ";
     echo '<div class="breadcrumb no-margin">当前位置：<a href="'. home_url() .'" title="首页">首页</a>';
     if (!is_attachment() ){

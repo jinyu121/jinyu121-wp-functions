@@ -10,7 +10,7 @@
 // |    抓取文章的第一个图片当做缩略图
 // +----------------------------------------------------------------------+
 
-function catch_first_image() {
+function theme_catch_first_image() {
     global $post, $posts;
     $first_img = '';
     ob_start();

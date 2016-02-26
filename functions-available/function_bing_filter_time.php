@@ -10,7 +10,7 @@
 // |    WordPress 修改时间的显示格式为几天前
 // +----------------------------------------------------------------------+
 
-function bing_filter_time(){
+function function_bing_filter_time(){
     global $post ;
     $to = time();
     $from = get_the_time('U') ;
@@ -44,4 +44,4 @@ function bing_filter_time(){
     }
     return $time;
 }
-add_filter('the_time','bing_filter_time');
+add_filter('the_time','function_bing_filter_time');

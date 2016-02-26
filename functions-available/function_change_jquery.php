@@ -10,7 +10,7 @@
 // |    更改JQ库 WordPress script loading by Willin Kan.
 // +----------------------------------------------------------------------+
 
-function change_jq(){
+function function_change_jquery(){
     if ( !is_admin() ) { // 後台不用
         if ( $localhost == 0 ) { // 本地調試不用
             function my_init_method() {
@@ -22,4 +22,4 @@ function change_jq(){
       wp_enqueue_script( 'a9', get_bloginfo('template_directory').'/a9.js', array('jquery'), '1.9.1', 0 ); // 全新自定義 script, 同時加載
     }
 }
-add_action('init', 'change_jq');
+add_action('init', 'function_change_jquery');

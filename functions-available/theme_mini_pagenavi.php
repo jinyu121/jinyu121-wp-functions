@@ -11,7 +11,7 @@
 // +----------------------------------------------------------------------+
 
 /* Mini Pagenavi v1.0 by Willin Kan. */
-function pagenavi( $p = 2 ) { // 取當前頁前後各 2 頁
+function theme_mini_pagenavi( $p = 2 ) { // 取當前頁前後各 2 頁
   if ( is_singular() ) return; // 文章與插頁不用
   global $wp_query, $paged;
   $max_page = $wp_query->max_num_pages;

@@ -7,18 +7,12 @@
 // | 代码收集自网络，由[小金鱼儿](jinyu121@126.com)编辑整理
 // +----------------------------------------------------------------------+
 // | 本文件内容：
-// |    对Wordpress的一些设置
+// |    貼圖 by willin kan.
 // +----------------------------------------------------------------------+
 
-//禁用历史版本
-function disable_autosave() {
-    wp_deregister_script('autosave');
+/* 貼圖 by willin kan. */
+function function_embed_images($content) {
+    $content = preg_replace('/\[img=?\]*(.*?)(\[\/img)?\]/e', '"<img src=\"$1\" alt=\"" . basename("$1") . "\" />"', $content);
+    return $content;
 }
-remove_action('pre_post_update', 'wp_save_post_revision');
-add_action('wp_print_scripts', 'disable_autosave');
-if(!defined('WP_POST_REVISIONS')){
-    define('WP_POST_REVISIONS', false);
-}
-
-//禁用半角符号自动转换为全角
-remove_filter('the_content', 'wptexturize');
+add_filter('comment_text', 'function_embed_images');

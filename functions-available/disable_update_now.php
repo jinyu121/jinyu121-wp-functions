@@ -7,12 +7,13 @@
 // | 代码收集自网络，由[小金鱼儿](jinyu121@126.com)编辑整理
 // +----------------------------------------------------------------------+
 // | 本文件内容：
-// |    貼圖 by willin kan.
+// |    WordPress仪表盘中禁用“请立即更新”消息
 // +----------------------------------------------------------------------+
 
-/* 貼圖 by willin kan. */
-function embed_images($content) {
-    $content = preg_replace('/\[img=?\]*(.*?)(\[\/img)?\]/e', '"<img src=\"$1\" alt=\"" . basename("$1") . "\" />"', $content);
-    return $content;
+function disable_update_now(){
+    if ( !current_user_can( 'edit_users' ) ) {
+        add_action( 'init', create_function( '$a', "remove_action( 'init', 'wp_version_check' );" ), 2 );
+        add_filter( 'pre_option_update_core', create_function( '$a', "return null;" ) );
+    }
 }
-add_filter('comment_text', 'embed_images');
+add_action('init', 'disable_update_now');

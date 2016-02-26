@@ -7,10 +7,10 @@
 // | 代码收集自网络，由[小金鱼儿](jinyu121@126.com)编辑整理
 // +----------------------------------------------------------------------+
 // | 本文件内容：
-// |    自定义的表情(表情代码使用Wordpress默认的)
+// |    移除screen_options选项
 // +----------------------------------------------------------------------+
 
-function custom_smilies_src ($img_src, $img, $WP_PLUGIN_URL){
-    return $siteurl.WP_PLUGIN_URL .'/jinyu121-wp-functions/functions-enabled/smilies/'.$img;
+function disable_screen_options(){
+    return false;
 }
-add_filter('smilies_src','custom_smilies_src',1,10);
+add_filter('screen_options_show_screen', 'disable_screen_options');

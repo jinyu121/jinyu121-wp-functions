@@ -10,7 +10,7 @@
 // |    获取某分类下随机文章
 // +----------------------------------------------------------------------+
 
-function wp_random_posts($howMuch = 5){
+function theme_wp_random_posts($howMuch = 5){
     $cat = get_the_category();
     foreach($cat as $key=>$category){
         $catid = $category->term_id;

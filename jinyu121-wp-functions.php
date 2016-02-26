@@ -1,7 +1,8 @@
 <?php
 /*
 Plugin Name: 小金鱼儿的Wordpress工具集
-Description: 各种小的工具
+Plugin URI: https://github.com/jinyu121/jinyu121-wp-functions
+Description: 各种小的工具。<br />需要手动将<code>functions-available</code>中的PHP文件复制到<code>functions-enabled</code>中以启用这些PHP文件。
 Version: 2015.02
 Author: 小金鱼儿
 Author URI: mailto:jinyu121@126.com

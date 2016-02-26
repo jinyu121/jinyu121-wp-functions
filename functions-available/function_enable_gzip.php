@@ -10,7 +10,7 @@
 // |    开启gzip压缩输出 by Willin Kan.
 // +----------------------------------------------------------------------+
 
-function enable_gzip() {
+function function_enable_gzip() {
     if ($is_localhost == true)
         return false;
     // Dont use on Admin HTML editor
@@ -23,4 +23,4 @@ function enable_gzip() {
     if (extension_loaded('zlib') && !ob_start('ob_gzhandler'))
         ob_start();
 }
-add_action('init', 'enable_gzip');
+add_action('init', 'function_enable_gzip');

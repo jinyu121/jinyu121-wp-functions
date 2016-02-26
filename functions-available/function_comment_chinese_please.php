@@ -7,11 +7,14 @@
 // | 代码收集自网络，由[小金鱼儿](jinyu121@126.com)编辑整理
 // +----------------------------------------------------------------------+
 // | 本文件内容：
-// |    拼写检查语言
+// |    评论必须包含汉字
 // +----------------------------------------------------------------------+
 
-function add_spellchecker_external_languages($initArray){
-    $initArray['spellchecker_languages'] = '+Chinese=zh,English=en';
-    return $initArray;
+function function_comment_chinese_please($incoming_comment) {
+    $pattern = '/[一-龥]/u';
+    if (!preg_match($pattern, $incoming_comment['comment_content'])) {
+        die("为防止垃圾评论，您的评论中必须包含汉字!");
+    }
+    return ($incoming_comment);
 }
-add_filter('tiny_mce_before_init', 'add_spellchecker_external_languages');
+add_filter('preprocess_comment', 'function_comment_chinese_please');

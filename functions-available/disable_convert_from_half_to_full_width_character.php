@@ -7,15 +7,8 @@
 // | 代码收集自网络，由[小金鱼儿](jinyu121@126.com)编辑整理
 // +----------------------------------------------------------------------+
 // | 本文件内容：
-// |    禁止主题切换
+// |    禁用半角符号自动转换为全角
 // +----------------------------------------------------------------------+
 
-function slt_lock_theme() {
-    global $submenu, $userdata;
-    get_currentuserinfo();
-    if ($userdata->ID != 1) {
-        unset($submenu['themes.php'][5]);
-        unset($submenu['themes.php'][15]);
-    }
-}
-add_action('admin_init', 'slt_lock_theme');
+//禁用半角符号自动转换为全角
+remove_filter('the_content', 'wptexturize');

@@ -10,7 +10,7 @@
 // |   中文附件名修改为文件名的MD5值（为了防止在某些服务器上文件名乱码）
 // +----------------------------------------------------------------------+
 
-function attachment_chinese_to_md5($filename) {
+function function_attachment_chinese_to_md5($filename) {
     $parts = explode('.', $filename);
     $filename = array_shift($parts);
     $extension = array_pop($parts);
@@ -23,4 +23,4 @@ function attachment_chinese_to_md5($filename) {
     $filename .= '.' . $extension;
     return $filename ;
 }
-add_filter('sanitize_file_name', 'attachment_chinese_to_md5', 5,1);
+add_filter('sanitize_file_name', 'function_attachment_chinese_to_md5', 5,1);

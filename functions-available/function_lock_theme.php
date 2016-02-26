@@ -7,14 +7,15 @@
 // | 代码收集自网络，由[小金鱼儿](jinyu121@126.com)编辑整理
 // +----------------------------------------------------------------------+
 // | 本文件内容：
-// |    评论必须包含汉字
+// |    禁止主题切换
 // +----------------------------------------------------------------------+
 
-function comment_chinese_please($incoming_comment) {
-    $pattern = '/[一-龥]/u';
-    if (!preg_match($pattern, $incoming_comment['comment_content'])) {
-        die("为防止垃圾评论，您的评论中必须包含汉字!");
+function function_lock_theme() {
+    global $submenu, $userdata;
+    get_currentuserinfo();
+    if ($userdata->ID != 1) {
+        unset($submenu['themes.php'][5]);
+        unset($submenu['themes.php'][15]);
     }
-    return ($incoming_comment);
 }
-add_filter('preprocess_comment', 'comment_chinese_please');
+add_action('admin_init', 'function_lock_theme');

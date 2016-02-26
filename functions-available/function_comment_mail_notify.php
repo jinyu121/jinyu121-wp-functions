@@ -11,7 +11,7 @@
 // +----------------------------------------------------------------------+
 
 /* comment_mail_notify v1.0 by willin kan. (有勾選欄, 由訪客決定) */
-function comment_mail_notify($comment_id) {
+function function_comment_mail_notify($comment_id) {
     $admin_notify = '1'; // admin 要不要收回覆通知 ( '1'=要 ; '0'=不要 )
     $admin_email = get_bloginfo ('admin_email'); // $admin_email 可改為你指定的 e-mail.
     $comment = get_comment($comment_id);
@@ -43,5 +43,5 @@ function comment_mail_notify($comment_id) {
         //echo 'mail to ', $to, '<br/> ' , $subject, $message; // for testing
     }
 }
-add_action('comment_post', 'comment_mail_notify');
+add_action('comment_post', 'function_comment_mail_notify');
 // -- END ----------------------------------------

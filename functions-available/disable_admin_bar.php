@@ -7,13 +7,17 @@
 // | 代码收集自网络，由[小金鱼儿](jinyu121@126.com)编辑整理
 // +----------------------------------------------------------------------+
 // | 本文件内容：
-// |    WordPress仪表盘中禁用“请立即更新”消息
+// |    移除管理员菜单栏
 // +----------------------------------------------------------------------+
 
-function remove_update_now(){
-    if ( !current_user_can( 'edit_users' ) ) {
-        add_action( 'init', create_function( '$a', "remove_action( 'init', 'wp_version_check' );" ), 2 );
-        add_filter( 'pre_option_update_core', create_function( '$a', "return null;" ) );
-    }
+function disable_admin_bar() {
+    global $wp_admin_bar;
+    $wp_admin_bar->remove_menu('wp-logo');
+    $wp_admin_bar->remove_menu('about');
+    $wp_admin_bar->remove_menu('wporg');
+    $wp_admin_bar->remove_menu('documentation');
+    $wp_admin_bar->remove_menu('support-forums');
+    $wp_admin_bar->remove_menu('feedback');
+    $wp_admin_bar->remove_menu('view-site');
 }
-add_action('init', 'remove_update_now');
+add_action( 'wp_before_admin_bar_render', 'disable_admin_bar' );

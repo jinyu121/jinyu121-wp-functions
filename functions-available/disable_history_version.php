@@ -7,17 +7,15 @@
 // | 代码收集自网络，由[小金鱼儿](jinyu121@126.com)编辑整理
 // +----------------------------------------------------------------------+
 // | 本文件内容：
-// |    移除菜单栏
+// |    禁用历史版本
 // +----------------------------------------------------------------------+
 
-function remove_admin_bar() {
-    global $wp_admin_bar;
-    $wp_admin_bar->remove_menu('wp-logo');
-    $wp_admin_bar->remove_menu('about');
-    $wp_admin_bar->remove_menu('wporg');
-    $wp_admin_bar->remove_menu('documentation');
-    $wp_admin_bar->remove_menu('support-forums');
-    $wp_admin_bar->remove_menu('feedback');
-    $wp_admin_bar->remove_menu('view-site');
+//禁用历史版本
+function disable_history_version() {
+    wp_deregister_script('autosave');
 }
-add_action( 'wp_before_admin_bar_render', 'remove_admin_bar' );
+remove_action('pre_post_update', 'wp_save_post_revision');
+add_action('wp_print_scripts', 'disable_history_version');
+if(!defined('WP_POST_REVISIONS')){
+    define('WP_POST_REVISIONS', false);
+}

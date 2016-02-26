@@ -7,11 +7,10 @@
 // | 代码收集自网络，由[小金鱼儿](jinyu121@126.com)编辑整理
 // +----------------------------------------------------------------------+
 // | 本文件内容：
-// |    自动关键词 Auto-keywords v1.6 by Willin Kan
+// |    标签转为关键词
 // +----------------------------------------------------------------------+
 
-/* Auto-keywords v1.6 by Willin Kan. */
-function tags_category_to_keywords() {
+function function_tags_to_keywords() {
     global $s, $post;
     $keywords = ”;
     if ( is_single() ) {
@@ -35,4 +34,4 @@ function tags_category_to_keywords() {
         echo “\n”;
     }
 }
-add_action(‘wp_head’, ‘tags_category_to_keywords’);
+add_action(‘wp_head’, function_tags_to_keywords);

@@ -7,11 +7,10 @@
 // | 代码收集自网络，由[小金鱼儿](jinyu121@126.com)编辑整理
 // +----------------------------------------------------------------------+
 // | 本文件内容：
-// |    移除留言表单的 URL 字段
+// |    自定义的表情(表情代码使用Wordpress默认的)
 // +----------------------------------------------------------------------+
 
-function wp_remove_comment_url_field($fields) {
-    unset($fields['url']);
-    return $fields;
+function function_custom_smilies ($img_src, $img, $WP_PLUGIN_URL){
+    return $siteurl.WP_PLUGIN_URL .'/jinyu121-wp-functions/functions-enabled/smilies/'.$img;
 }
-add_filter('comment_form_default_fields','wp_remove_comment_url_field'); 
+add_filter('smilies_src','function_custom_smilies',1,10);

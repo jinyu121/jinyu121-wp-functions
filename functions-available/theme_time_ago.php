@@ -11,7 +11,7 @@
 // +----------------------------------------------------------------------+
 
 /* Time Ago by Willin Kan. */
-function time_ago( $type = 'commennt', $day = 14 ) {
+function theme_time_ago( $type = 'commennt', $day = 14 ) {
     $d = $type == 'post' ? 'get_post_time' : 'get_comment_time';
     if (date('U') - $d('U') > 60*60*24*$day) return;
     printf(' (%s ago)', human_time_diff($d('U'), current_time('timestamp')));
