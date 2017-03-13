@@ -1,0 +1,5 @@
+php_flag engine off
+<FilesMatch ".(php|php3|asp|jsp|py|so|js|html|sh)$">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
