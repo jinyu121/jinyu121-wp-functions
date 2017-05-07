@@ -7,10 +7,11 @@
 // | 代码收集自网络，由[小金鱼儿](jinyu121@126.com)编辑整理
 // +----------------------------------------------------------------------+
 // | 本文件内容：
-// |    移除screen_options选项
+// |    移除后台“帮助”
 // +----------------------------------------------------------------------+
 
-function disable_screen_options(){
-    return false;
+function jinyu121_disable_admin_help($old_help, $screen_id, $screen){
+    $screen->remove_help_tabs();
+    return $old_help;
 }
-add_filter('screen_options_show_screen', 'disable_screen_options');
+add_filter('contextual_help', 'jinyu121_disable_admin_help', 999, 3);
