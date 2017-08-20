@@ -10,14 +10,15 @@
 // |    抓取文章的第一个图片当做缩略图
 // +----------------------------------------------------------------------+
 
-function theme_catch_first_image() {
+function theme_catch_first_image($default=false) {
     global $post, $posts;
-    $first_img = '';
     ob_start();
     ob_end_clean();
-    $output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
-    $first_img = $matches [1] [0];
-    if(empty($first_img))
-        return false;
-    return $first_img;
+    $doc = new DOMDocument();
+    @$doc->loadHTML($post->post_content);
+    $img = $doc->getElementsByTagName('img');
+    if($img->length > 0){
+        return $img->item(0)->getAttribute('src');
+    }
+    return $default;
 }
