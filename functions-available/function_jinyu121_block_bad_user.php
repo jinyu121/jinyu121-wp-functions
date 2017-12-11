@@ -15,6 +15,9 @@
 
 include_once( "boomb/boomb_functions.php" );
 function function_jinyu121_block_bad_user() {
+    if (is_user_logged_in()){
+        return;
+    }
     $ip = jinyu121_boomb_get_ip();
     if ($ip != 'Unknow_IP'){
         $pre = jinyu121_boomb_get_pre();
