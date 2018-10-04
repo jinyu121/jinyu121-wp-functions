@@ -1,5 +1,5 @@
 <?php 
-include_once( "boomb_functions.php" );
+include_once( dirname( dirname( __FILE__ ) ) . "/functions-available/assest_boomb.php" );
 $ip = jinyu121_boomb_get_ip();
 if ($ip != 'Unknow_IP'){
     //jinyu121_boomb_log_ip_to_file($ip);
