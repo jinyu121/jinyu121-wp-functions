@@ -22,7 +22,7 @@ function function_jinyu121_bing_daily_wallpaper(){
         $content = $_REQUEST['callback'] . "(" . $content . ")";
     }
     echo $content;
-    die();
+    wp_die();
 }
 
 add_action("wp_ajax_nopriv_bing_daily_wallpaper", "function_jinyu121_bing_daily_wallpaper");
