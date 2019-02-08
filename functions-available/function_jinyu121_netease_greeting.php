@@ -25,6 +25,7 @@ function function_jinyu121_netease_greeting(){
     die();
 }
 
+add_action("wp_ajax_nopriv_netease_greeting", "function_jinyu121_netease_greeting");
 add_action("wp_ajax_netease_greeting", "function_jinyu121_netease_greeting");
 
 function jinyu121_apply_netease_greeting(){

@@ -25,6 +25,7 @@ function function_jinyu121_bing_daily_wallpaper(){
     die();
 }
 
+add_action("wp_ajax_nopriv_bing_daily_wallpaper", "function_jinyu121_bing_daily_wallpaper");
 add_action("wp_ajax_bing_daily_wallpaper", "function_jinyu121_bing_daily_wallpaper");
 
 function jinyu121_apply_bing_wallpaper(){
