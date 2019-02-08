@@ -39,7 +39,7 @@ function jinyu121_apply_netease_greeting(){
             var m = data.data.contents.length;
             var n = Math.ceil(Math.random()*m);
             if (m == n){n = n-1;};
-            jQuery(".site-description").append("<br />").append(data.data.contents[n].replace("姓名，",""));
+            jQuery(".site-description").append(" - ").append(data.data.contents[n].replace("姓名，",""));
         }
     });
     </script>
