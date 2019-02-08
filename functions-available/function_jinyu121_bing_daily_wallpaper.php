@@ -11,9 +11,9 @@
 // |    用法： admin_url('admin-ajax.php?action=bing_daily_wallpaper&callback=my_callback');
 // +----------------------------------------------------------------------+
 
-function function_bing_daily_wallpaper(){
+function function_jinyu121_bing_daily_wallpaper(){
     $target_url = "http://www.bing.com/HPImageArchive.aspx?format=js&idx=-1&n=1";
-    $timeout    = 60 * 60 * 2;
+    $timeout    = 60 * 60 * 6;
     $key        = "jinyu121_bing_daily_wallpaper";
 
     $content = function_get_cache_file($target_url, $timeout, $key);
@@ -25,4 +25,4 @@ function function_bing_daily_wallpaper(){
     die();
 }
 
-add_action("wp_ajax_bing_daily_wallpaper", "function_bing_daily_wallpaper");
+add_action("wp_ajax_bing_daily_wallpaper", "function_jinyu121_bing_daily_wallpaper");

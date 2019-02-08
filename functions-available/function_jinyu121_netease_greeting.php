@@ -11,9 +11,9 @@
 // |    用法： admin_url('admin-ajax.php?action=netease_greeting&callback=my_callback');
 // +----------------------------------------------------------------------+
 
-function function_netease_greeting(){
+function function_jinyu121_netease_greeting(){
     $target_url = "https://ssl.mail.126.com/jy4-app.mail.163.com/jy4-app/xhr/mbox/greetings/get.do";
-    $timeout    = 60 * 60 * 2;
+    $timeout    = 60 * 60 * 1;
     $key        = "jinyu121_netease_greeting";
 
     $content = function_get_cache_file($target_url, $timeout, $key);
@@ -25,4 +25,4 @@ function function_netease_greeting(){
     die();
 }
 
-add_action("wp_ajax_netease_greeting", "function_netease_greeting");
+add_action("wp_ajax_netease_greeting", "function_jinyu121_netease_greeting");
