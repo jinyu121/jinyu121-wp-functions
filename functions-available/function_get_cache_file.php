@@ -21,7 +21,7 @@ function get_remote_content($url) {
     } else {
         $content = file_get_contents($url);
     }
-    return $url;
+    return $content;
 }
 
 function function_get_cache_file($target_url, $timeout, $key) {
