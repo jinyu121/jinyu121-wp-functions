@@ -26,3 +26,24 @@ function function_jinyu121_netease_greeting(){
 }
 
 add_action("wp_ajax_netease_greeting", "function_jinyu121_netease_greeting");
+
+function jinyu121_apply_netease_greeting(){
+?>
+    <script type='text/javascript'>
+    jQuery.ajax({
+        url: "<?php echo admin_url('admin-ajax.php');?>",
+        data: { "action": "netease_greeting" },
+        cache: true, 
+        dataType: 'json',
+        success: function(data){
+            var m = data.data.contents.length;
+            var n = Math.ceil(Math.random()*m);
+            if (m == n){n = n-1;};
+            jQuery(".site-description").append("<br />").append(data.data.contents[n].replace("姓名，",""));
+        }
+    });
+    </script>
+<?php
+}
+
+add_action('wp_footer', 'jinyu121_apply_netease_greeting', 100);
