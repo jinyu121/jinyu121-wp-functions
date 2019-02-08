@@ -26,3 +26,26 @@ function function_jinyu121_bing_daily_wallpaper(){
 }
 
 add_action("wp_ajax_bing_daily_wallpaper", "function_jinyu121_bing_daily_wallpaper");
+
+function jinyu121_apply_bing_wallpaper(){
+?>
+    <script type='text/javascript'>
+    jQuery.ajax({
+        url: "<?php echo admin_url('admin-ajax.php');?>",
+        data: { "action": "bing_daily_wallpaper" },
+        cache: true,
+        dataType: 'json',
+        success: function(data){ 
+            jQuery('body').css({
+                "background-image": "url(//www.bing.com"+data.images[0].url+")",
+                "background-position": "center", 
+                "background-size": "cover",
+                "background-repeat": "no-repeat", 
+                "background-attachment": "fixed"
+            }); 
+        }
+    });
+    </script>
+<?php
+}
+add_action('wp_footer', 'jinyu121_apply_bing_wallpaper', 99);
