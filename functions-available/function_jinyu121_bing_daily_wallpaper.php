@@ -42,7 +42,9 @@ function jinyu121_apply_bing_wallpaper(){
                 "background-position": "center", 
                 "background-size": "cover",
                 "background-repeat": "no-repeat", 
-                "background-attachment": "fixed"
+                "background-attachment": "fixed",
+                "-webkit-backdrop-filter": "blur(5px)",
+                "backdrop-filter": "blur(5px)"
             }); 
         }
     });
