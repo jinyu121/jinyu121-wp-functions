@@ -11,6 +11,6 @@
 // +----------------------------------------------------------------------+
 
 function disable_jetpack_devicepx() {
-    wp_dequeue_script( ‘devicepx’ );
+    wp_dequeue_script( "devicepx" );
 }
-add_action( ‘wp_enqueue_scripts’, ‘disable_jetpack_devicepx’ ,100 );
+add_action( "wp_enqueue_scripts", "disable_jetpack_devicepx" ,100 );

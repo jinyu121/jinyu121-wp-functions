@@ -40,7 +40,7 @@ function function_anti_spam(){
         function sink( $comment ) {
             if ( !empty($_POST['spam_confirmed']) ) {
                 //方法一:直接擋掉, 將 die(); 前面兩斜線刪除即可.
-                die();
+                wp_die();
                 //方法二:標記為spam, 留在資料庫檢查是否誤判.
                 //add_filter('pre_comment_approved', create_function('', 'return "spam";'));
                 //$comment['comment_content'] = "[ 小牆判斷這是Spam! ]\n" . $comment['comment_content'];
