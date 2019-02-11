@@ -12,7 +12,7 @@
 // +----------------------------------------------------------------------+
 
 function function_jinyu121_bing_daily_wallpaper(){
-    $target_url = "http://www.bing.com/HPImageArchive.aspx?format=js&idx=-1&n=1";
+    $target_url = "http://www.bing.com/HPImageArchive.aspx?format=js&idx=-1&n=5";
     $timeout    = 60 * 60 * 6;
     $key        = "jinyu121_bing_daily_wallpaper";
 
@@ -36,9 +36,10 @@ function jinyu121_apply_bing_wallpaper(){
         data: { "action": "bing_daily_wallpaper" },
         cache: true,
         dataType: 'json',
-        success: function(data){ 
+        success: function(data){
+            var n = Math.trunc(Math.random()*data.images.length);
             jQuery('body').css({
-                "background-image": "url(//www.bing.com"+data.images[0].url+")",
+                "background-image": "url(//www.bing.com"+data.images[n].url+")",
                 "background-position": "center", 
                 "background-size": "cover",
                 "background-repeat": "no-repeat", 
