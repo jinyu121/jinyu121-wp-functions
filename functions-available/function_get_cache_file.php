@@ -35,7 +35,7 @@ function function_get_cache_file($target_url, $timeout, $key) {
         }
     }
     catch(Exception $e) {
-        $key = sys_get_temp_dir() . $key; // 缓存文件路径
+        $key = sys_get_temp_dir() . '/' . $key; // 缓存文件路径
         $newfile = false;
         if (!file_exists($key)) {
             $newfile = true;
