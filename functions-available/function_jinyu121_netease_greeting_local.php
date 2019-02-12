@@ -26,7 +26,7 @@ function function_jinyu121_netease_greeting(){
 	}
 
 	$json = ["status" => "OK", "content" => trim($greetings[array_rand($greetings)], "。") ];
-	echo json_encode($json);;
+	echo json_encode($json, JSON_UNESCAPED_UNICODE);
 	wp_die();
 }
 
