@@ -9,6 +9,7 @@ Author URI: mailto:jinyu121@126.com
 */
 $host = $_SERVER['HTTP_HOST'];
 $is_localhost = strstr($host, '192.168') || strstr($host, '127.0.0') || stristr($host, 'localhost') ? true : false; // 判斷是否在本地
+date_default_timezone_set(get_option('timezone_string'));
 
 // define('INC', dirname( __FILE__ ) .'/functions-enabled');
 // IncludeAll( INC );
