@@ -20,7 +20,7 @@ function function_jinyu121_netease_greeting(){
 		$hour_range_exp = explode("-",$hour_range);
 		$hour_sta = intval($hour_range_exp[0]);
 		$hour_end = intval($hour_range_exp[1]);
-		if (($hour_sta < $hour_end && ($hour_sta <= $hour && $hour < $hour_end)) || ($hour_sta > $hour_end && ($hour_sta >= $hour || $hour < $hour_end))) {
+		if (($hour_sta < $hour_end && ($hour_sta <= $hour && $hour < $hour_end)) || ($hour_sta > $hour_end && ($hour_sta <= $hour || $hour < $hour_end))) {
 			$greetings = array_merge($greetings, $data_part[$hour_range]);
 		}
 	}
